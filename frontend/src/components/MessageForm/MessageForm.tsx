@@ -44,7 +44,7 @@ const MessageForm: React.FC<Props> = ({onSubmit, isLoading = false}) => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form onSubmit={onFormSubmit} style={{maxWidth: '400px'}}>
       <Grid container direction="column" spacing={2}>
         <Grid item xs>
           <TextField

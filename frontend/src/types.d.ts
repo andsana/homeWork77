@@ -10,3 +10,4 @@ export interface MessageMutation {
   message: string;
   image: File | null;
 }
+

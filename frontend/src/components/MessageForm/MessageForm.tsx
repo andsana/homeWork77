@@ -20,9 +20,10 @@ const MessageForm: React.FC<Props> = ({onSubmit, isLoading = false}) => {
   const [message, setMessage] = useState(initialState);
 
   const changeMessage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setMessage((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
+    const {name, value} = e.target;
+    setMessage((prevState) => ({
+      ...prevState,
+      [name]: value,
     }));
   };
 
@@ -44,10 +45,9 @@ const MessageForm: React.FC<Props> = ({onSubmit, isLoading = false}) => {
 
   return (
     <form onSubmit={onFormSubmit}>
-      <Grid container direction="column">
+      <Grid container direction="column" spacing={2}>
         <Grid item xs>
           <TextField
-            required
             id="author" label="Author"
             name="author"
             value={message.author}

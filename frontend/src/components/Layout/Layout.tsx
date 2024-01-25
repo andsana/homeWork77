@@ -1,15 +1,16 @@
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
+import AppToolbar from '../AppToolbar/AppToolbar';
+
 
 const Layout: React.FC<React.PropsWithChildren> = ({children}) => {
   return (
     <>
       <header>
-        <Navbar/>
+        <AppToolbar/>
       </header>
       <main className="container-fluid">
         {children}
-        </main>
+      </main>
     </>
   );
 };
